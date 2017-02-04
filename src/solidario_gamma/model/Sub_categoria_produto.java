@@ -49,8 +49,7 @@ public class Sub_categoria_produto extends Categoria_produto {
         int g=sub_categoria_prod.size();
         sub_cat_prod.setId_sub_categoria_produto(g);
         System.out.println("Indique o nome da nova sub-categoria de produto:");
-        String z=scan.nextLine();
-        sub_cat_prod.setNome_subcategoria_produto(z);
+        sub_cat_prod.setNome_subcategoria_produto(new Scanner(System.in).nextLine());
         sub_categoria_prod.add(sub_cat_prod);
         produto.setSub_categoria_produto(sub_categoria_prod.get(g));//hummmm
     }

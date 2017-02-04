@@ -47,8 +47,7 @@ public class Categoria_produto {
         int g=categoria_prod.size();
         cat_prod.setId_categoria_produtos(g);
         System.out.println("Indique o nome da nova categoria de produto:");
-        String z=scan.nextLine();
-        cat_prod.setNome_categoria_produto(z);
+        cat_prod.setNome_categoria_produto(new Scanner(System.in).nextLine());
         categoria_prod.add(cat_prod);
         produto.setCategoria_produto(categoria_prod.get(g));//hummm aqui???
     }
