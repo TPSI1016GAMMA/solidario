@@ -103,21 +103,20 @@ public class Produto {
             int g;
             System.out.println("Insira os dados relativos ao novo produto.");
             System.out.println("Designação do produto:");
-            produto.setNome_produto(scan.nextLine());
-            produto.setId_produto(product.size());
+            produto.setNome_produto(scan.nextLine()); //set nome
+            produto.setId_produto(product.size());  //set id
             System.out.println("Categoria de produto:");
             Categoria_produto.listar();
             System.out.println("0 - Criar nova categoria de produto");
             g=scan.nextInt();            
             if(g!=0){
-                produto.setCategoria_produto(categoria_prod.get((g-1)));
+                produto.setCategoria_produto(categoria_prod.get((g-1))); //set categoria
                 System.out.println("Sub-categoria do produto:");
                 Sub_categoria_produto.listar();         
-                System.out.println("0 - Criar nova sub-categoria de produto");
-                g=scan.nextInt();
-                if (g!=0){
-                    produto.setSub_categoria_produto(sub_categoria_prod.get((g-1)));
-                }else{
+                System.out.println("0 - Criar nova sub-categoria de produto");               
+                try{
+                    produto.setSub_categoria_produto(sub_categoria_prod.get((scan.nextInt()-1))); //set sub categoria
+                }catch (IndexOutOfBoundsException e){
                     
                     Sub_categoria_produto.criar_nova();
                     produto.setSub_categoria_produto(sub_categoria_prod.get(sub_categoria_prod.size()-1));}
@@ -135,7 +134,10 @@ public class Produto {
                       produto.setSub_categoria_produto(sub_categoria_prod.get((g-1)));
                     }else{
                         Sub_categoria_produto.criar_nova();
-                        produto.setSub_categoria_produto(sub_categoria_prod.get(sub_categoria_prod.size()-1));}}} 
+                        produto.setSub_categoria_produto(sub_categoria_prod.get(sub_categoria_prod.size()-1));}}}
+            
+            //falta set barcode
+            //falta set stock minimo
             product.add(produto);
         }
 

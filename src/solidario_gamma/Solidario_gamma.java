@@ -18,7 +18,7 @@ public class Solidario_gamma {
     public static void main(String[] args) {
                        
     
-        int p, x=compras.size();
+        int p=product.size(), x=compras.size();
         compra.setId_fornecimento(x); 
         
         System.out.println("Introduza armazém: \n(0 - Para listar armazens)");
@@ -36,13 +36,13 @@ public class Solidario_gamma {
         
         for (Produto produto : product) {
             if(produto.getBarcode()==x){
-                p=product.indexOf(produto);
-            }else{
-                System.out.println("Produto inexistente.");
-                Produto.criar_novo();
-                p=product.size();}
+                p=product.indexOf(produto);}}
+                             
+        if (p==product.size()){
+            System.out.println("Produto inexistente.");
+            Produto.criar_novo();}
         }
         
        
         
-    }}
+    }
