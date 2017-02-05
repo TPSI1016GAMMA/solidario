@@ -16,7 +16,15 @@ public class Requisicao_Item_imo extends Requisicao {
         this.data_inicio = data_inicio;
         this.data_fim = data_fim;
     }
-        
+
+    public HashMap<Produto, Float> getItem() {
+        return item;
+    }
+
+    public void setItem(HashMap<Produto, Float> item) {
+        this.item = item;
+    }
+   
     public Date getData_inicio() {
         return data_inicio;
     }
