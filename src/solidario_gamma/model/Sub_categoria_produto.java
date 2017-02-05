@@ -46,12 +46,12 @@ public class Sub_categoria_produto extends Categoria_produto {
     }
     
     public static void criar_nova(){
+        Sub_categoria_produto sub_cat_prod=new Sub_categoria_produto(0,null,0, null);
         int g=sub_categoria_prod.size();
         sub_cat_prod.setId_sub_categoria_produto(g);
         System.out.println("Indique o nome da nova sub-categoria de produto:");
         sub_cat_prod.setNome_subcategoria_produto(new Scanner(System.in).nextLine());
-        sub_categoria_prod.add(sub_cat_prod);
-        produto.setSub_categoria_produto(sub_categoria_prod.get(g));//hummmm
+        sub_categoria_prod.add(sub_cat_prod);        
     }
     
     

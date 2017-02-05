@@ -7,7 +7,6 @@ package solidario_gamma.model;
 
 import java.util.Scanner;
 import static solidario_gamma.MocData.*;
-import static solidario_gamma.controller.Diversos.scan;
 /**
  *
  * @author Missy M, Mighty Arroz e Mais velho
@@ -44,12 +43,12 @@ public class Categoria_produto {
     }
     
     public static void criar_nova(){
+        Categoria_produto cat_prod=new Categoria_produto(0, null);
         int g=categoria_prod.size();
         cat_prod.setId_categoria_produtos(g);
         System.out.println("Indique o nome da nova categoria de produto:");
         cat_prod.setNome_categoria_produto(new Scanner(System.in).nextLine());
-        categoria_prod.add(cat_prod);
-        produto.setCategoria_produto(categoria_prod.get(g));//hummm aqui???
+        categoria_prod.add(cat_prod);        
     }
     
 } 

@@ -66,10 +66,10 @@ public class Localizacao {
     }
     
     public static void criar_nova(){
+       Localizacao local=new Localizacao(0,null,null, null);
        local.setId_localizacao(locations.size());
        System.out.println("Introduza a nova morada:");
        local.setMorada_localizacao(new Scanner(System.in).nextLine());
-       System.out.println("Nova ");
        locations.add(local);
        
    }

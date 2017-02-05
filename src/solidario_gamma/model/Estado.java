@@ -6,7 +6,6 @@
 package solidario_gamma.model;
 
 import static solidario_gamma.MocData.estados;
-import static solidario_gamma.MocData.locations;
 
 /**
  *
@@ -41,6 +40,10 @@ public class Estado {
     public static void listar(){
         for ( int j=0; j>estados.size(); j++){
               System.out.println( (j+1) + " - " + (estados.get(j)).getNome_estado());} 
+    }
+    
+    public void criar_novo(){ //TODO
+    Estado estado=new Estado(0,null);
     }
      
 }

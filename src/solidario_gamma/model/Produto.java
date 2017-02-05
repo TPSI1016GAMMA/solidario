@@ -1,9 +1,9 @@
 
 package solidario_gamma.model;
 
+import java.util.Scanner;
 import static solidario_gamma.MocData.categoria_prod;
 import static solidario_gamma.MocData.product;
-import static solidario_gamma.MocData.produto;
 import static solidario_gamma.MocData.sub_categoria_prod;
 import static solidario_gamma.controller.Diversos.scan;
 
@@ -97,30 +97,30 @@ public class Produto {
         this.stock_minimo = stock_minimo;
     }
     
-        public static void criar_novo(){
-
+        public static void criar_novo(int barcode){
+            
+            Produto produto=new Produto(0,null,null,null,0,null,0,0);
             String z;
             int g;
+            produto.setBarcode(barcode);//set barcode
             System.out.println("Insira os dados relativos ao novo produto.");
             System.out.println("Designação do produto:");
-            produto.setNome_produto(scan.nextLine()); //set nome
+            produto.setNome_produto(new Scanner(System.in).nextLine()); //set nome
             produto.setId_produto(product.size());  //set id
             System.out.println("Categoria de produto:");
             Categoria_produto.listar();
             System.out.println("0 - Criar nova categoria de produto");
-            g=scan.nextInt();            
-            if(g!=0){
-                produto.setCategoria_produto(categoria_prod.get((g-1))); //set categoria
+            try{
+                produto.setCategoria_produto(categoria_prod.get((new Scanner(System.in).nextInt()-1))); //set categoria
                 System.out.println("Sub-categoria do produto:");
                 Sub_categoria_produto.listar();         
                 System.out.println("0 - Criar nova sub-categoria de produto");               
                 try{
-                    produto.setSub_categoria_produto(sub_categoria_prod.get((scan.nextInt()-1))); //set sub categoria
-                }catch (IndexOutOfBoundsException e){
-                    
+                    produto.setSub_categoria_produto(sub_categoria_prod.get((new Scanner(System.in).nextInt()-1))); //set sub categoria
+                }catch (IndexOutOfBoundsException e){                    
                     Sub_categoria_produto.criar_nova();
                     produto.setSub_categoria_produto(sub_categoria_prod.get(sub_categoria_prod.size()-1));}
-            }else{
+            }catch (IndexOutOfBoundsException e){
                 Categoria_produto.criar_nova();
                 produto.setCategoria_produto(categoria_prod.get(categoria_prod.size()-1));
                 System.out.println("Introduzir sub-categoria? (s/n)");
@@ -130,15 +130,15 @@ public class Produto {
                     Sub_categoria_produto.listar();              
                     System.out.println("0 - Criar nova sub-categoria de produto");
                      g=scan.nextInt();
-                    if (g!=0){
-                      produto.setSub_categoria_produto(sub_categoria_prod.get((g-1)));
-                    }else{
+                    try{
+                      produto.setSub_categoria_produto(sub_categoria_prod.get((new Scanner(System.in).nextInt()-1)));
+                    }catch (IndexOutOfBoundsException f){
                         Sub_categoria_produto.criar_nova();
                         produto.setSub_categoria_produto(sub_categoria_prod.get(sub_categoria_prod.size()-1));}}}
+            System.out.println("Stock minimo:");
+            produto.setStock_minimo(new Scanner(System.in).nextFloat()); //set stock minimo
+            product.add(produto);//adiciona produto ao arraylist de produtos
             
-            //falta set barcode
-            //falta set stock minimo
-            product.add(produto);
         }
 
 }

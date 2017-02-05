@@ -3,9 +3,10 @@ package solidario_gamma.model;
 
 import java.util.Date;
 import java.util.HashMap;
-import static solidario_gamma.MocData.*;
+import java.util.Scanner;
+import static solidario_gamma.MocData.locations;
+import static solidario_gamma.MocData.stores;
 import static solidario_gamma.controller.Diversos.data;
-import static solidario_gamma.controller.Diversos.scan;
 
 /**
  *
@@ -94,26 +95,35 @@ public class Armazem {
     }
     
     public static void criar_novo(){
-
+            Armazem store=new Armazem(0,null,null, null, null, null);
             String z;
             int g;
             System.out.println("Introduza os dados relativos ao novo armazém");
             System.out.println("Designação do armazém");
-            store.setNome_armazem(scan.nextLine());
+            store.setNome_armazem(new Scanner(System.in).nextLine());
             store.setId_armazem(stores.size());
             System.out.println("Localização:");
             Localizacao.listar();
             System.out.println("0 - Criar nova localização");
             try{
-                store.setLocal(locations.get((scan.nextInt())-1));
+                store.setLocal(locations.get((new Scanner(System.in).nextInt())-1));
             }catch (IndexOutOfBoundsException e){    //??? pk o e?        
                 Localizacao.criar_nova();
                 store.setLocal(locations.get(locations.size()-1));}
             //System.out.println("Numero do funcionário do responsável de armazém:");//Falta classe funcionario do outro grupo
             //store.setResponsavel_de_armazem(scan.nextInt());//Falta classe funcionario do outro grupo
-            store.setData_estado_armazem(data);            
-            stores.add(store);    
-    
+            store.setData_estado_armazem(data);      
+            System.out.println("Confirma a criação do novo armazém com os seguintes dados:");
+            System.out.println("Designação: " + store.getNome_armazem());
+            System.out.println("Localização: " + (store.getLocal()).getMorada_localizacao());
+            //System.out.println("Responsável: " + (store.getResponsavel_de_armazem()).getMomefuncionario()); //Falta classe funcionario do outro grupo
+            char y;
+            y = new Scanner(System.in).next().charAt(0);
+            if(y=='s') {
+                stores.add(store);
+            }else{
+               //TODO 
+            }
 }
  
     
