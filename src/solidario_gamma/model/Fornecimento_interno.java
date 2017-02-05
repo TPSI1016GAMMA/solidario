@@ -20,9 +20,7 @@ public class Fornecimento_interno extends Fornecimento {
     
     public Fornecimento_interno(int id_fornecimento, Requisicao requisicao, Date data_fornecimento, Date estado_autorizacao, Funcionario func_autorizante) {
         super(id_fornecimento, requisicao, data_fornecimento, estado_autorizacao, func_autorizante);
-        this.id_armazem=id_armazem;
-        setRequisicao(null);
-    
+        this.id_armazem=id_armazem;    
     }
 
     public int getId_armazem() {

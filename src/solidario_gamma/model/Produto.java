@@ -97,12 +97,17 @@ public class Produto {
         this.stock_minimo = stock_minimo;
     }
     
+    public static void listar(){
+        for ( int j=0; j>product.size(); j++){
+            System.out.println( (j+1) + " - " + (product.get(j)).getNome_produto());} 
+    }
+    
         public static void criar_novo(int barcode){
             
             Produto produto=new Produto(0,null,null,null,0,null,0,0);
             String z;
             int g;
-            produto.setBarcode(barcode);//set barcode
+            if (barcode!=0)produto.setBarcode(barcode); //set barcode
             System.out.println("Insira os dados relativos ao novo produto.");
             System.out.println("Designação do produto:");
             produto.setNome_produto(new Scanner(System.in).nextLine()); //set nome
@@ -129,7 +134,6 @@ public class Produto {
                     System.out.println("Sub-categoria do produto:");
                     Sub_categoria_produto.listar();              
                     System.out.println("0 - Criar nova sub-categoria de produto");
-                     g=scan.nextInt();
                     try{
                       produto.setSub_categoria_produto(sub_categoria_prod.get((new Scanner(System.in).nextInt()-1)));
                     }catch (IndexOutOfBoundsException f){

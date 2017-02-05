@@ -13,7 +13,7 @@ public class Fornecimento {
  private Date data_fornecimento;
  private Date estado_autorizacao;
  private Funcionario func_autorizante;
- private HashMap <Produto,Float> produtos_fornecidos=new HashMap <>();
+ public HashMap <Produto,Float> produtos_fornecidos=new HashMap <>();
 
     public Fornecimento(int id_fornecimento, Requisicao requisicao, Date data_fornecimento, Date estado_autorizacao, Funcionario func_autorizante) {
         this.id_fornecimento = id_fornecimento;

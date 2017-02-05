@@ -95,9 +95,9 @@ public class Armazem {
     }
     
     public static void criar_novo(){
+        
+            char y;          
             Armazem store=new Armazem(0,null,null, null, null, null);
-            String z;
-            int g;
             System.out.println("Introduza os dados relativos ao novo armazém");
             System.out.println("Designação do armazém");
             store.setNome_armazem(new Scanner(System.in).nextLine());
@@ -117,13 +117,10 @@ public class Armazem {
             System.out.println("Designação: " + store.getNome_armazem());
             System.out.println("Localização: " + (store.getLocal()).getMorada_localizacao());
             //System.out.println("Responsável: " + (store.getResponsavel_de_armazem()).getMomefuncionario()); //Falta classe funcionario do outro grupo
-            char y;
             y = new Scanner(System.in).next().charAt(0);
             if(y=='s') {
-                stores.add(store);
-            }else{
-               //TODO 
-            }
+                stores.add(store);}
+            
 }
  
     
