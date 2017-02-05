@@ -7,27 +7,16 @@ import java.util.*;
  */
 public class Requisicao_Item_imo extends Requisicao {
     
-   private Vector items= new Vector();
+   private HashMap <Produto,Float> item=new HashMap <>();
    private Date data_inicio;
    private Date data_fim;
-    
-    
-    public Requisicao_Item_imo(int id_requisicao, Departamento departamento_destino, Funcionario funcionario_requisitante, Date data_requisicao, HashMap<Produto, Float> produtos_requisitados, Armazem armazem_requisitado,Vector items, Date data_inicio,Date data_fim) {
+
+    public Requisicao_Item_imo(Date data_inicio, Date data_fim, int id_requisicao, Departamento departamento_destino, Funcionario funcionario_requisitante, Date data_requisicao, HashMap<Produto, Float> produtos_requisitados, Armazem armazem_requisitado) {
         super(id_requisicao, departamento_destino, funcionario_requisitante, data_requisicao, produtos_requisitados, armazem_requisitado);
-        this.items=items;
-        this.data_inicio=data_inicio;
-        this.data_fim=data_fim;
+        this.data_inicio = data_inicio;
+        this.data_fim = data_fim;
+    }
         
-    }
-
-    public Vector getItems() {
-        return items;
-    }
-
-    public void setItems(Vector items) {
-        this.items = items;
-    }
-
     public Date getData_inicio() {
         return data_inicio;
     }
