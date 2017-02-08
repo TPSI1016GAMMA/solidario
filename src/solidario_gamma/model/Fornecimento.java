@@ -2,26 +2,21 @@ package solidario_gamma.model;
 
 /**
  *
- *  @author Missy M, Mighty Arroz e Mais velho
+ *  @author Missy M and Mighty Arroz
  */
 import java.util.*;
 public class Fornecimento {
 
+ private int id_fornecimento; 
+ private Date data_fornecimento; 
+ public HashMap <Produto,Float> produtos_fornecidos;
 
- private int id_fornecimento;
- private Requisicao requisicao;
- private Date data_fornecimento;
- private Date estado_autorizacao;
- private Funcionario func_autorizante;
- public HashMap <Produto,Float> produtos_fornecidos=new HashMap <>();
-
-    public Fornecimento(int id_fornecimento, Requisicao requisicao, Date data_fornecimento, Date estado_autorizacao, Funcionario func_autorizante) {
+    public Fornecimento(int id_fornecimento, Date data_fornecimento, HashMap<Produto, Float> produtos_fornecidos) {
         this.id_fornecimento = id_fornecimento;
-        this.requisicao = requisicao;
         this.data_fornecimento = data_fornecimento;
-        this.estado_autorizacao = estado_autorizacao;
-        this.func_autorizante = func_autorizante;
+        this.produtos_fornecidos = new HashMap<>();
     }
+    
 
     public int getId_fornecimento() {
         return id_fornecimento;
@@ -31,36 +26,13 @@ public class Fornecimento {
         this.id_fornecimento = id_fornecimento;
     }
 
-    public Requisicao getRequisicao() {
-        return requisicao;
-    }
-
-    public void setRequisicao(Requisicao requisicao) {
-        this.requisicao = requisicao;
-    }
-
+    
     public Date getData_fornecimento() {
         return data_fornecimento;
     }
 
     public void setData_fornecimento(Date data_fornecimento) {
         this.data_fornecimento = data_fornecimento;
-    }
-
-    public Date getEstado_autorizacao() {
-        return estado_autorizacao;
-    }
-
-    public void setEstado_autorizacao(Date estado_autorizacao) {
-        this.estado_autorizacao = estado_autorizacao;
-    }
-
-    public Funcionario getFunc_autorizante() {
-        return func_autorizante;
-    }
-
-    public void setFunc_autorizante(Funcionario func_autorizante) {
-        this.func_autorizante = func_autorizante;
     }
 
     public HashMap<Produto, Float> getProdutos_fornecidos() {
@@ -71,8 +43,5 @@ public class Fornecimento {
         this.produtos_fornecidos = produtos_fornecidos;
     }
  
- 
-  
-
-    
+     
 }

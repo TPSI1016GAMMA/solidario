@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package solidario_gamma.controller;
 
 import java.text.DateFormat;
@@ -12,7 +7,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Missy M
+ *  @author Missy M and Mighty Arroz
  */
 public interface Diversos {
         Scanner scan=new Scanner(System.in);

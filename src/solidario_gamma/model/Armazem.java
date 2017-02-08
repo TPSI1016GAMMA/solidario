@@ -10,7 +10,7 @@ import static solidario_gamma.controller.Diversos.data;
 
 /**
  *
- *  @author Missy M, Mighty Arroz e Mais velho
+ *  @author Missy M and Mighty Arroz
  */
 public class Armazem {
   

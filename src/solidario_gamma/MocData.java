@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package solidario_gamma;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import solidario_gamma.model.*;
 
 /**
  *
- * @author Missy M
+ *  @author Missy M and Mighty Arroz
  */
 public class MocData {
     
-    public static ArrayList<Fornecimento_interno> compras=new ArrayList<Fornecimento_interno> ();
+    public static ArrayList<Abastecimento_armazem> compras=new ArrayList<Abastecimento_armazem> ();
     
     public static ArrayList<Produto> product=new ArrayList<Produto> ();
     

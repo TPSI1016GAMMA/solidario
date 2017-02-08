@@ -5,10 +5,9 @@ import java.util.Date;
 import java.util.Scanner;
 import static solidario_gamma.MocData.*;
 
-
 /**
  *
- *  @author Missy M, Mighty Arroz e Mais velho
+ *  @author Missy M and Mighty Arroz
  */
 
 public class Localizacao {

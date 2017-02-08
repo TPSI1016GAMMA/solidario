@@ -1,36 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package solidario_gamma.model;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  *
- *  @authores Missy M, Mighty Arroz e Mais velho
+ *  @author Missy M and Mighty Arroz
  */
 
-//TODO - ACHO QUE ESTA CLASSE É PARA DESAPARECER
 public class Fornecimento_interno extends Fornecimento {
 
-    private int id_armazem;
-    
-    
-    public Fornecimento_interno(int id_fornecimento, Requisicao requisicao, Date data_fornecimento, Date estado_autorizacao, Funcionario func_autorizante) {
-        super(id_fornecimento, requisicao, data_fornecimento, estado_autorizacao, func_autorizante);
-        this.id_armazem=id_armazem;    
+    private Requisicao requisicao;
+    private Date estado_autorizacao;
+    private Funcionario func_autorizante;
+
+    public Fornecimento_interno(Requisicao requisicao, Date estado_autorizacao, Funcionario func_autorizante, int id_fornecimento, Date data_fornecimento, HashMap<Produto, Float> produtos_fornecidos) {
+        super(id_fornecimento, data_fornecimento, produtos_fornecidos);
+        this.requisicao = requisicao;
+        this.estado_autorizacao = estado_autorizacao;
+        this.func_autorizante = func_autorizante;
     }
 
-    public int getId_armazem() {
-        return id_armazem;
+    public Requisicao getRequisicao() {
+        return requisicao;
     }
 
-    public void setId_armazem(int id_armazem) {
-        this.id_armazem = id_armazem;
+    public void setRequisicao(Requisicao requisicao) {
+        this.requisicao = requisicao;
     }
-       
+
+    public Date getEstado_autorizacao() {
+        return estado_autorizacao;
+    }
+
+    public void setEstado_autorizacao(Date estado_autorizacao) {
+        this.estado_autorizacao = estado_autorizacao;
+    }
+
+    public Funcionario getFunc_autorizante() {
+        return func_autorizante;
+    }
+
+    public void setFunc_autorizante(Funcionario func_autorizante) {
+        this.func_autorizante = func_autorizante;
+    }
     
-   
 }
