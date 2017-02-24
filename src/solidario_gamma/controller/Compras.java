@@ -76,6 +76,7 @@ public class Compras {
         //abastecimento.setProdutos_fornecidos(abastecimento.produtos_fornecidos); //isto é necessário??
         
         System.out.println("Continuar? (s/n) "); 
+        answer=new Scanner(System.in).next().charAt(0);
         }while(answer=='s');
         compras.add(abastecimento);
    }}
